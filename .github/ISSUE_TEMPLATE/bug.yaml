@@ -7,7 +7,7 @@ body:
   - type: textarea
     id: description
     attributes:
-      label: "### 📝 Description of the Bug"
+      label: "## 📝 Description of the Bug"
       description: "A clear and concise description of what the bug is."
       placeholder: "When I click the 'Save' button, the form data is not sent to the server, and the UI freezes."
     validations:
@@ -17,7 +17,7 @@ body:
   - type: textarea
     id: steps
     attributes:
-      label: "### 🚶 Steps to Reproduce"
+      label: "## 🚶 Steps to Reproduce"
       description: "List the **exact** steps to reproduce the behavior."
       placeholder: |
         1. Go to '...'
@@ -32,7 +32,7 @@ body:
   - type: textarea
     id: expected
     attributes:
-      label: "### ✅ Expected Behavior"
+      label: "## ✅ Expected Behavior"
       description: "What did you expect to happen?"
       placeholder: "The username should update successfully, and a 'Success' toast notification should appear."
     validations:
@@ -41,7 +41,7 @@ body:
   - type: textarea
     id: actual
     attributes:
-      label: "### ❌ Actual Behavior"
+      label: "## ❌ Actual Behavior"
       description: "What actually happened (e.g., error messages, wrong output)?"
       placeholder: "The application threw a '500 Internal Server Error' in the console, and the page didn't refresh."
     validations:
@@ -51,7 +51,7 @@ body:
   - type: dropdown
     id: environment
     attributes:
-      label: "### 🌎 Environment"
+      label: "## 🌎 Environment"
       description: "Where did you observe the bug?"
       options:
         - Local Development
@@ -83,12 +83,12 @@ body:
   - type: textarea
     id: screenshots
     attributes:
-      label: "### 📸 Screenshots or Console Logs"
+      label: "## 📸 Screenshots or Console Logs"
       description: "Paste any relevant screenshots, animated GIFs, or console/server logs here."
 
   # 6. Possible Cause/Workaround (Optional)
   - type: textarea
     id: possible_cause
     attributes:
-      label: "### 💡 Possible Cause / Workaround"
+      label: "## 💡 Possible Cause / Workaround"
       description: "If you have an idea of what might be causing the bug or a temporary fix, please include it."
