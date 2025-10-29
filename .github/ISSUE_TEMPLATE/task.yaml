@@ -1,0 +1,55 @@
+name: "🧠 Task"
+description: Use this for internal technical or operational tasks, refactoring, or cleanup.
+title: "TASK: [Clear, concise objective]"
+labels: ["task", "refactor", "operational"]
+body:
+  # 1. Objective / Summary (Required)
+  - type: textarea
+    id: objective
+    attributes:
+      label: "### 🎯 Task Objective"
+      description: "Clearly state what needs to be done. (e.g., 'Refactor the authentication hook to use Redux Toolkit' or 'Update all deployment manifests.')"
+    validations:
+      required: true
+
+  # 2. Detailed Steps / Action Items (Required Checklist)
+  - type: textarea
+    id: steps
+    attributes:
+      label: "### 🛠️ Action Items / Checklist"
+      description: "Break down the task into specific, manageable steps. Use a checklist format."
+      placeholder: |
+        - [ ] Create a new branch for the task
+        - [ ] Apply changes to the configuration file X
+        - [ ] Validate changes on the staging environment
+        - [ ] Open a PR for review
+    validations:
+      required: true
+
+  # 3. Details / Context
+  - type: textarea
+    id: details
+    attributes:
+      label: "### 📜 Details / Context"
+      description: "Provide necessary background, related internal documentation, or links to existing issues/PRs."
+
+  # 4. Acceptance Criteria (Required Checklist)
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "### ✅ Acceptance Criteria"
+      description: "Define the specific, verifiable outcomes that confirm the task is complete and successful."
+      placeholder: |
+        - [ ] The refactored code passes all existing unit tests.
+        - [ ] The new configuration is applied successfully in production.
+        - [ ] No regressions or unexpected side effects are observed.
+    validations:
+      required: true
+
+  # 5. Dependencies & Blockers
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "### 🔗 Dependencies & Blockers"
+      description: "List any issues, pull requests, or prerequisites that must be completed before this task can start or be finished."
+      placeholder: "Requires #123 (API update) to be merged first."

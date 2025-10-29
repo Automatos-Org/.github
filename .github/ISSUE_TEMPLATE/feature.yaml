@@ -1,0 +1,77 @@
+name: "✨ Feature Request"
+description: Suggest or specify a new feature or enhancement.
+title: "QL-XXX: [Short feature summary]"
+labels: ["feature", "enhancement"]
+body:
+  # 1. Title / Short Summary (as a text field for a clear summary *inside* the body)
+  - type: textarea
+    id: short_summary
+    attributes:
+      label: "✨ Short Summary"
+      description: "Provide a concise summary of the feature, e.g., 'Recommendation Engine'."
+    validations:
+      required: true
+
+  # 2. Description Section (Markdown block for the main explanation)
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        ## 📘 Description
+        Briefly describe the feature you’d like to add or improve. The functionality and UI should be modular — extracted into a dedicated `Assistant` component.
+
+  # 3. Background / Context (As a textarea)
+  - type: textarea
+    id: background
+    attributes:
+      label: "🧩 Background / Context"
+      description: "Why is this feature needed? What problem does it solve? Provide context on the mastery data usage."
+    validations:
+      required: true
+
+  # 4. Acceptance Criteria (As a textarea with a checklist placeholder)
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: "✅ Acceptance Criteria"
+      description: "List specific outcomes that must be met. Use a checklist format."
+      placeholder: |
+        - [ ] AI Assistant accepts messages from the user.
+        - [ ] The assistant successfully fetches random MCQs and relevant mastery data
+        - [ ] The filtered mastery will include the best, worst, and average performing sub-topics (3 in total)
+        - [ ] The AI recommends an MCQ, should it be required
+    validations:
+      required: true
+
+  # 5. Implementation Notes (As a textarea)
+  - type: textarea
+    id: implementation
+    attributes:
+      label: "🛠️ Implementation Notes"
+      description: "Any technical notes, proposed approach, or dependencies."
+      placeholder: |
+        * Use (`/api/mcq`) to fetch MCQ based on LLM-returned ID
+        * Mastery should be filtered to three sub-topics: best, worst, and a random average in between
+        * The LLM should return a JSON in the following format: `{text: <string>, mcq_id: <string>}`
+    validations:
+      required: true
+
+  # 6. Testing Notes (As a textarea)
+  - type: textarea
+    id: testing
+    attributes:
+      label: "🧪 Testing Notes"
+      description: "How to test or verify the feature works."
+      placeholder: |
+        1. Type in a query in the LLM
+        2. Verify the response is as humanly expected and relevant to performance.
+    validations:
+      required: true
+
+  # 7. Dependencies (As a textarea)
+  - type: textarea
+    id: dependencies
+    attributes:
+      label: "🔗 Dependencies"
+      description: "List any external dependencies, required API changes, or prerequisite features."
+      placeholder: "The API route `/api/mcq` table schema must include searchable fields (e.g., `title`, `description`)."

@@ -1,0 +1,22 @@
+{
+  "name": "automatos-default-community-health-files",
+  "version": "1.0.0",
+  "description": "Contains elements common across repos owned by Automatos.",
+  "main": "index.js",
+  "scripts": {
+    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Automatos-Org/.github.git"
+  },
+  "author": "Hassan-xyx-Mudassir",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Automatos-Org/.github/issues"
+  },
+  "homepage": "https://github.com/Automatos-Org/.github#readme",
+  "devDependencies": {
+    "conventional-changelog-cli": "^5.0.0"
+  }
+}
