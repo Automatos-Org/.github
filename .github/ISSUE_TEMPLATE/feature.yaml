@@ -1,77 +1,89 @@
 name: "✨ Feature Request"
 description: Suggest or specify a new feature or enhancement.
-title: "QL-XXX: [Short feature summary]"
+title: "FW-XXX: [Feature Title]"
 labels: ["feature", "enhancement"]
+
 body:
-  # 1. Title / Short Summary (as a text field for a clear summary *inside* the body)
+  # 1. Description Section
   - type: textarea
-    id: short_summary
+    id: description
     attributes:
-      label: "✨ Short Summary"
-      description: "Provide a concise summary of the feature, e.g., 'Recommendation Engine'."
+      label: "📘 Description"
+      description: "Describe the feature in detail — what it does, what problem it solves, and its purpose."
+      placeholder: |
+        Implement a secure, auditable consent system for minors. 
+        When a user below 18 registers, their guardian receives a consent email. 
+        The system must handle consent tokens, auditing, and deferred registration.
     validations:
       required: true
 
-  # 2. Description Section (Markdown block for the main explanation)
-  - type: markdown
-    attributes:
-      value: |
-        ---
-        ## 📘 Description
-        Briefly describe the feature you’d like to add or improve. The functionality and UI should be modular — extracted into a dedicated `Assistant` component.
-
-  # 3. Background / Context (As a textarea)
+  # 2. Background / Context
   - type: textarea
     id: background
     attributes:
       label: "🧩 Background / Context"
-      description: "Why is this feature needed? What problem does it solve? Provide context on the mastery data usage."
+      description: "Why is this feature needed? What problem, regulation, or scenario does it address?"
+      placeholder: |
+        To comply with COPPA/GDPR-K, minors must not gain full access until a guardian consents. 
+        This system automates that flow and records consent for legal traceability.
     validations:
       required: true
 
-  # 4. Acceptance Criteria (As a textarea with a checklist placeholder)
+  # 3. Acceptance Criteria
   - type: textarea
     id: acceptance
     attributes:
       label: "✅ Acceptance Criteria"
-      description: "List specific outcomes that must be met. Use a checklist format."
+      description: "Define the measurable conditions that must be met for completion."
       placeholder: |
-        - [ ] AI Assistant accepts messages from the user.
-        - [ ] The assistant successfully fetches random MCQs and relevant mastery data
-        - [ ] The filtered mastery will include the best, worst, and average performing sub-topics (3 in total)
-        - [ ] The AI recommends an MCQ, should it be required
+        - [x] When a user registers with age < 18, a guardian email is required.
+        - [x] A guardian consent email is sent automatically.
+        - [x] The consent link updates the minor’s profile when approved.
+        - [x] The guardian must be registered and over 18.
+        - [x] Tokens expire within 24–48 hours and cannot be reused.
     validations:
       required: true
 
-  # 5. Implementation Notes (As a textarea)
+  # 4. Implementation Notes
   - type: textarea
     id: implementation
     attributes:
       label: "🛠️ Implementation Notes"
-      description: "Any technical notes, proposed approach, or dependencies."
+      description: "Provide implementation or architectural notes, such as schema changes, Edge Functions, or email setup."
       placeholder: |
-        * Use (`/api/mcq`) to fetch MCQ based on LLM-returned ID
-        * Mastery should be filtered to three sub-topics: best, worst, and a random average in between
-        * The LLM should return a JSON in the following format: `{text: <string>, mcq_id: <string>}`
+        * **Database:** Add `guardian_relationships` table with consent tracking fields.  
+        * **Edge Function:** `send_guardian_consent_email` triggered on minor registration.  
+        * **Email Service:** Integrate with Resend/SendGrid for transactional consent emails.  
+        * **Frontend:** Add `/consent` page for deep link handling and token validation.  
+        * **Security:** Hash tokens, enforce expiry, and log consent IPs and timestamps.
     validations:
       required: true
 
-  # 6. Testing Notes (As a textarea)
+  # 5. Testing Notes
   - type: textarea
     id: testing
     attributes:
       label: "🧪 Testing Notes"
-      description: "How to test or verify the feature works."
+      description: "Describe the test plan, cases, and expected behavior."
       placeholder: |
-        1. Type in a query in the LLM
-        2. Verify the response is as humanly expected and relevant to performance.
+        1. Register a user under 18 and provide a guardian email.  
+        2. Verify the guardian receives a valid consent link.  
+        3. Confirm consent updates the minor’s access.  
+        4. Ensure expired or reused tokens fail securely.  
+        5. Check that all consent events are logged correctly.
     validations:
       required: true
 
-  # 7. Dependencies (As a textarea)
+  # 6. Dependencies
   - type: textarea
     id: dependencies
     attributes:
       label: "🔗 Dependencies"
-      description: "List any external dependencies, required API changes, or prerequisite features."
-      placeholder: "The API route `/api/mcq` table schema must include searchable fields (e.g., `title`, `description`)."
+      description: "List all external dependencies, integrations, or prerequisite systems."
+      placeholder: |
+        * Supabase Edge Functions (v2)  
+        * Resend or SendGrid integration  
+        * Expo deep linking for consent URLs  
+        * Database migration for guardian_relationships
+    validations:
+      required: false
