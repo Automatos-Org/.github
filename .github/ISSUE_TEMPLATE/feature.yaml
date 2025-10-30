@@ -5,10 +5,12 @@ labels: ["feature", "enhancement"]
 
 body:
   # 1. Description Section
+  - type: markdown
+    attributes:
+      value: "## 📘 Description"
   - type: textarea
     id: description
     attributes:
-      label: "## 📘 Description"
       description: "Describe the feature in detail — what it does, what problem it solves, and its purpose."
       placeholder: |
         Implement a secure, auditable consent system for minors. 
@@ -18,10 +20,12 @@ body:
       required: true
 
   # 2. Background / Context
+  - type: markdown
+    attributes:
+      value: "## 🧩 Background / Context"
   - type: textarea
     id: background
     attributes:
-      label: "## 🧩 Background / Context"
       description: "Why is this feature needed? What problem, regulation, or scenario does it address?"
       placeholder: |
         To comply with COPPA/GDPR-K, minors must not gain full access until a guardian consents. 
@@ -30,10 +34,12 @@ body:
       required: true
 
   # 3. Acceptance Criteria
+  - type: markdown
+    attributes:
+      value: "## ✅ Acceptance Criteria"
   - type: textarea
     id: acceptance
     attributes:
-      label: "## ✅ Acceptance Criteria"
       description: "Define the measurable conditions that must be met for completion."
       placeholder: |
         - [x] When a user registers with age < 18, a guardian email is required.
@@ -45,45 +51,51 @@ body:
       required: true
 
   # 4. Implementation Notes
+  - type: markdown
+    attributes:
+      value: "## 🛠️ Implementation Notes"
   - type: textarea
     id: implementation
     attributes:
-      label: "## 🛠️ Implementation Notes"
       description: "Provide implementation or architectural notes, such as schema changes, Edge Functions, or email setup."
       placeholder: |
-        * **Database:** Add `guardian_relationships` table with consent tracking fields.  
-        * **Edge Function:** `send_guardian_consent_email` triggered on minor registration.  
-        * **Email Service:** Integrate with Resend/SendGrid for transactional consent emails.  
-        * **Frontend:** Add `/consent` page for deep link handling and token validation.  
+        * **Database:** Add `guardian_relationships` table with consent tracking fields. 
+        * **Edge Function:** `send_guardian_consent_email` triggered on minor registration. 
+        * **Email Service:** Integrate with Resend/SendGrid for transactional consent emails. 
+        * **Frontend:** Add `/consent` page for deep link handling and token validation. 
         * **Security:** Hash tokens, enforce expiry, and log consent IPs and timestamps.
     validations:
       required: true
 
   # 5. Testing Notes
+  - type: markdown
+    attributes:
+      value: "## 🧪 Testing Notes"
   - type: textarea
     id: testing
     attributes:
-      label: "## 🧪 Testing Notes"
       description: "Describe the test plan, cases, and expected behavior."
       placeholder: |
-        1. Register a user under 18 and provide a guardian email.  
-        2. Verify the guardian receives a valid consent link.  
-        3. Confirm consent updates the minor’s access.  
-        4. Ensure expired or reused tokens fail securely.  
+        1. Register a user under 18 and provide a guardian email. 
+        2. Verify the guardian receives a valid consent link. 
+        3. Confirm consent updates the minor’s access. 
+        4. Ensure expired or reused tokens fail securely. 
         5. Check that all consent events are logged correctly.
     validations:
       required: true
 
   # 6. Dependencies
+  - type: markdown
+    attributes:
+      value: "## 🔗 Dependencies"
   - type: textarea
     id: dependencies
     attributes:
-      label: "## 🔗 Dependencies"
       description: "List all external dependencies, integrations, or prerequisite systems."
       placeholder: |
-        * Supabase Edge Functions (v2)  
-        * Resend or SendGrid integration  
-        * Expo deep linking for consent URLs  
+        * Supabase Edge Functions (v2) 
+        * Resend or SendGrid integration 
+        * Expo deep linking for consent URLs 
         * Database migration for guardian_relationships
     validations:
       required: false
