@@ -1,9 +1,9 @@
-# 1.0.0 (2025-10-29)
+# 1.0.0 (2025-10-30)
 
 
 ### Features
 
-* update feature template headings to use h2 instead of h3 ([33b505e](https://github.com/Automatos-Org/.github/commit/33b505ea71c5fb1eef6c8d5c1119b00a4b729248))
+* update headings of templates to use h2 via markdown workaround ([70e969a](https://github.com/Automatos-Org/.github/commit/70e969af8484e9c417ceae8bd7465388e00c30dc))
 
 
 
