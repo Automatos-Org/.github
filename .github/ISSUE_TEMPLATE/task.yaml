@@ -4,7 +4,6 @@ title: "FW-XXX: [Task Title]"
 labels: ["task", "refactor", "operational"]
 
 body:
-  # 1. Objective / Summary
   - type: markdown
     attributes:
       value: "## 🎯 Task Objective"
@@ -15,7 +14,6 @@ body:
     validations:
       required: true
 
-  # 2. Detailed Steps / Action Items
   - type: markdown
     attributes:
       value: "## 🛠️ Action Items / Checklist"
@@ -31,7 +29,6 @@ body:
     validations:
       required: true
 
-  # 3. Details / Context
   - type: markdown
     attributes:
       value: "## 📜 Details / Context"
@@ -40,7 +37,6 @@ body:
     attributes:
       description: "Provide necessary background, related internal documentation, or links to existing issues/PRs."
 
-  # 4. Acceptance Criteria
   - type: markdown
     attributes:
       value: "## ✅ Acceptance Criteria"
@@ -55,7 +51,6 @@ body:
     validations:
       required: true
 
-  # 5. Dependencies & Blockers
   - type: markdown
     attributes:
       value: "## 🔗 Dependencies & Blockers"

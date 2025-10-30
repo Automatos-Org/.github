@@ -4,7 +4,6 @@ title: "FW-XXX: [Feature Title]"
 labels: ["feature", "enhancement"]
 
 body:
-  # 1. Description Section
   - type: markdown
     attributes:
       value: "## 📘 Description"
@@ -19,7 +18,6 @@ body:
     validations:
       required: true
 
-  # 2. Background / Context
   - type: markdown
     attributes:
       value: "## 🧩 Background / Context"
@@ -33,7 +31,6 @@ body:
     validations:
       required: true
 
-  # 3. Acceptance Criteria
   - type: markdown
     attributes:
       value: "## ✅ Acceptance Criteria"
@@ -50,7 +47,6 @@ body:
     validations:
       required: true
 
-  # 4. Implementation Notes
   - type: markdown
     attributes:
       value: "## 🛠️ Implementation Notes"
@@ -67,7 +63,6 @@ body:
     validations:
       required: true
 
-  # 5. Testing Notes
   - type: markdown
     attributes:
       value: "## 🧪 Testing Notes"
@@ -84,7 +79,6 @@ body:
     validations:
       required: true
 
-  # 6. Dependencies
   - type: markdown
     attributes:
       value: "## 🔗 Dependencies"

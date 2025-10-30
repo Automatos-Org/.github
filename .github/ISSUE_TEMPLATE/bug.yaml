@@ -4,7 +4,6 @@ title: "FW-XXX: [Bug Title]"
 labels: ["bug", "triage-needed"]
 
 body:
-  # 1. Description
   - type: markdown
     attributes:
       value: "## 📝 Description of the Bug"
@@ -16,7 +15,6 @@ body:
     validations:
       required: true
 
-  # 2. Steps to Reproduce
   - type: markdown
     attributes:
       value: "## 🚶 Steps to Reproduce"
@@ -33,7 +31,6 @@ body:
     validations:
       required: true
 
-  # 3. Expected vs. Actual
   - type: markdown
     attributes:
       value: "## ✅ Expected Behavior"
@@ -57,7 +54,6 @@ body:
     validations:
       required: true
 
-  # 4. Environment / Context
   - type: markdown
     attributes:
       value: "## 🌎 Environment"
@@ -95,7 +91,6 @@ body:
     validations:
       required: true
 
-  # 5. Media & Logs
   - type: markdown
     attributes:
       value: "## 📸 Screenshots or Console Logs"
@@ -104,7 +99,6 @@ body:
     attributes:
       description: "Paste any relevant screenshots, animated GIFs, or console/server logs here."
 
-  # 6. Possible Cause/Workaround (Optional)
   - type: markdown
     attributes:
       value: "## 💡 Possible Cause / Workaround"
