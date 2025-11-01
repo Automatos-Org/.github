@@ -4,12 +4,10 @@ title: "FW-XXX: [Feature Title]"
 labels: ["feature", "enhancement"]
 
 body:
-  - type: markdown
-    attributes:
-      value: "## 📘 Description"
   - type: textarea
     id: description
     attributes:
+      label: "## 📘 Description"
       description: "Describe the feature in detail — what it does, what problem it solves, and its purpose."
       placeholder: |
         Implement a secure, auditable consent system for minors. 
@@ -18,12 +16,10 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: "## 🧩 Background / Context"
   - type: textarea
     id: background
     attributes:
+      label: "## 🧩 Background / Context"
       description: "Why is this feature needed? What problem, regulation, or scenario does it address?"
       placeholder: |
         To comply with COPPA/GDPR-K, minors must not gain full access until a guardian consents. 
@@ -31,12 +27,10 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: "## ✅ Acceptance Criteria"
   - type: textarea
     id: acceptance
     attributes:
+      label: "## ✅ Acceptance Criteria"
       description: "Define the measurable conditions that must be met for completion."
       placeholder: |
         - [x] When a user registers with age < 18, a guardian email is required.
@@ -47,12 +41,10 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: "## 🛠️ Implementation Notes"
   - type: textarea
     id: implementation
     attributes:
+      label: "## 🛠️ Implementation Notes"
       description: "Provide implementation or architectural notes, such as schema changes, Edge Functions, or email setup."
       placeholder: |
         * **Database:** Add `guardian_relationships` table with consent tracking fields. 
@@ -63,12 +55,10 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: "## 🧪 Testing Notes"
   - type: textarea
     id: testing
     attributes:
+      label: "## 🧪 Testing Notes"
       description: "Describe the test plan, cases, and expected behavior."
       placeholder: |
         1. Register a user under 18 and provide a guardian email. 
@@ -79,12 +69,10 @@ body:
     validations:
       required: true
 
-  - type: markdown
-    attributes:
-      value: "## 🔗 Dependencies"
   - type: textarea
     id: dependencies
     attributes:
+      label: "## 🔗 Dependencies"
       description: "List all external dependencies, integrations, or prerequisite systems."
       placeholder: |
         * Supabase Edge Functions (v2) 
