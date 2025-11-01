@@ -4,7 +4,9 @@
   "description": "Contains elements common across repos owned by Automatos.",
   "main": "index.js",
   "scripts": {
-    "changelog": "conventional-changelog -p angular -i CHANGELOG.md -s -r 0"
+    "prepare": "husky install",
+    "changelog": "conventional-changelog -n .versionrc.js -i CHANGELOG.md -s -r 0",
+    "release": "semantic-release"
   },
   "repository": {
     "type": "git",
@@ -17,6 +19,16 @@
   },
   "homepage": "https://github.com/Automatos-Org/.github#readme",
   "devDependencies": {
-    "conventional-changelog-cli": "^5.0.0"
+    "@commitlint/cli": "^20.1.0",
+    "@commitlint/config-conventional": "^20.0.0",
+    "conventional-changelog-cli": "^5.0.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.2.6"
+  },
+  "dependencies": {
+    "@semantic-release/npm": "^13.1.1"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,json,md,css}": "prettier --write"
   }
 }

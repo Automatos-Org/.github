@@ -1,0 +1,5 @@
+echo "🔍  Running commitlint..."
+npx --no -- commitlint --edit $1
+echo "✔️  Done"
+
+echo "🏁  Hook finished"
