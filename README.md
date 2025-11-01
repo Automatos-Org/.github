@@ -1,6 +1,6 @@
 <!-- Add the URL to your organization's image/logo below -->
 
-![Automatos Organization Logo Placeholder](URL_HERE)
+![Automatos Organization Logo Placeholder](https://github.com/Automatos-Org/.github/blob/5779c7c7160ebba657b9abcf1332021185db8222/assets/automatos-dev-cover.jpeg)
 
 # .github
 
