@@ -24,7 +24,7 @@ jobs:
           node-version: 22
 
       - name: Install dependencies
-        run: npm ci
+        run: npm i
 
       - name: Lint commits
         run: npx commitlint --from=HEAD~20 --to=HEAD || true
